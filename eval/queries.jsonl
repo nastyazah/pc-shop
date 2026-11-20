@@ -1,0 +1,44 @@
+{"q": "материнка асус", "expect_category": "motherboards"}
+{"q": "мамка під ам5 ддр5", "expect_category": "motherboards"}
+{"q": "vfnthbyrf", "expect_category": "motherboards"}
+{"q": "відюха 8 гб", "expect_category": "gpu"}
+{"q": "видеокарта nvidia", "expect_category": "gpu"}
+{"q": "ссд 1 тб", "expect_category": "ssd"}
+{"q": "оператива ддр5 32 гб", "expect_category": "ram"}
+{"q": "блок живлення 750 вт", "expect_category": "psu"}
+{"q": "райзен 5 7600x", "expect_sku": "CPU-AMD-R57600X"}
+{"q": "b650 tuf", "expect_sku": "MB-ASU-B650TUF"}
+{"q": "MB-MSI-B550TOM", "expect_sku": "MB-MSI-B550TOM"}
+{"q": "кулер на процесор до 3000", "expect_category": "coolers"}
+{"q": "плта", "expect_category": "motherboards"}
+{"q": "матринка асус", "expect_category": "motherboards"}
+{"q": "відеокрта 8 гб", "expect_category": "gpu"}
+{"q": "процеср інтел", "expect_category": "cpu"}
+{"q": "куллер", "expect_category": "coolers"}
+{"q": "жосткий диск 2 тб", "expect_category": "hdd"}
+{"q": "хард 4 тб", "expect_category": "hdd"}
+{"q": "ртх 4060", "expect_category": "gpu"}
+{"q": "оператива ддр5", "expect_category": "ram"}
+{"q": "вертушка 120", "expect_category": "fans"}
+{"q": "kingstn fury", "expect_category": "ram"}
+{"q": "ryzn 5 7600x", "expect_sku": "CPU-AMD-R57600X"}
+{"q": "бмоки живлення", "expect_category": "psu"}
+{"q": "gkfnb", "expect_category": "motherboards"}
+{"q": "dsltjrfhnf 8 u,", "expect_category": "gpu"}
+{"q": "dsltjrfhn", "expect_category": "gpu"}
+{"q": "корпсу", "expect_category": "cases"}
+{"q": "фігі b650", "expect_sku": "MB-ASU-B650TUF"}
+{"q": "кеч 4060", "expect_category": "gpu"}
+{"q": "дуйчик 120", "expect_category": "fans"}
+{"q": "материнкаасус", "expect_category": "motherboards"}
+{"q": "відеокартаасус8гб", "expect_category": "gpu"}
+{"q": "ssd1тб", "expect_category": "ssd"}
+{"q": "блокживлення650вт", "expect_category": "psu"}
+{"q": "kingstonfury", "expect_category": "ram"}
+{"q": "vfnthbyrffcec", "expect_category": "motherboards"}
+{"q": "аператива ддр5", "expect_category": "ram"}
+{"q": "процесар інтел", "expect_category": "cpu"}
+{"q": "кулір", "expect_category": "coolers"}
+{"q": "найдешевша відеокарта", "expect_category": "gpu"}
+{"q": "топовий процесор", "expect_category": "cpu"}
+{"q": "відеокарта в наявності", "expect_category": "gpu"}

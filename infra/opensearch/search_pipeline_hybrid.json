@@ -1,0 +1,14 @@
+{
+  "description": "Hybrid: лексичний BM25 (вага 0.6) + векторний kNN (вага 0.4), min-max нормалізація",
+  "phase_results_processors": [
+    {
+      "normalization-processor": {
+        "normalization": { "technique": "min_max" },
+        "combination": {
+          "technique": "arithmetic_mean",
+          "parameters": { "weights": [0.6, 0.4] }
+        }
+      }
+    }
+  ]
+}

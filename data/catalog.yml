@@ -1,0 +1,93 @@
+# Каталог. Назва товару збирається автоматично: "<тип> <бренд> <модель>".
+# Рядок товару: [SKU, бренд, модель, ціна, стара ціна|null, популярність, {характеристики}, "опис", в_наявності(необов'язково)]
+categories:
+  - {slug: motherboards, singular: "Материнська плата", name: "Материнські плати"}
+  - {slug: cpu, singular: "Процесор", name: "Процесори"}
+  - {slug: gpu, singular: "Відеокарта", name: "Відеокарти"}
+  - {slug: ram, singular: "Оперативна памʼять", name: "Оперативна памʼять"}
+  - {slug: ssd, singular: "SSD-накопичувач", name: "SSD-накопичувачі"}
+  - {slug: hdd, singular: "Жорсткий диск", name: "Жорсткі диски"}
+  - {slug: psu, singular: "Блок живлення", name: "Блоки живлення"}
+  - {slug: cases, singular: "Корпус", name: "Корпуси"}
+  - {slug: coolers, singular: "Кулер для процесора", name: "Охолодження процесора"}
+  - {slug: fans, singular: "Вентилятор для корпусу", name: "Вентилятори"}
+
+brands: [ASUS, MSI, Gigabyte, ASRock, AMD, Intel, Sapphire, Kingston, Corsair, Samsung, Seasonic, Lian Li, DeepCool, G.Skill, Patriot, Goodram, Western Digital, Crucial, Seagate, be quiet!, Cooler Master, NZXT, Montech, Arctic, Thermalright, Noctua]
+
+products:
+  motherboards:
+    - [MB-ASU-B650TUF, ASUS, "TUF GAMING B650-PLUS WIFI", 9499, 10299, 90, {socket: AM5, chipset: B650, ram_type: DDR5, form_factor: ATX, wifi: "Так"}, "Для Ryzen 7000: DDR5, PCIe 5.0 і Wi-Fi 6."]
+    - [MB-ASU-B550MK, ASUS, "PRIME B550M-K", 3999, null, 60, {socket: AM4, chipset: B550, ram_type: DDR4, form_factor: mATX, wifi: "Ні"}, "Бюджетна плата для Ryzen 3000/5000 з DDR4 та слотом M.2."]
+    - [MB-MSI-B550TOM, MSI, "MAG B550 TOMAHAWK", 6999, null, 70, {socket: AM4, chipset: B550, ram_type: DDR4, form_factor: ATX, wifi: "Ні"}, "Плата для AM4 з посиленим живленням і двома слотами M.2."]
+    - [MB-MSI-B650MP, MSI, "PRO B650M-P", 5799, null, 65, {socket: AM5, chipset: B650, ram_type: DDR5, form_factor: mATX, wifi: "Ні"}, "Доступна плата для Ryzen 7000 з підтримкою DDR5."]
+    - [MB-GIG-A620MGX, Gigabyte, "A620M GAMING X", 4499, null, 50, {socket: AM5, chipset: A620, ram_type: DDR5, form_factor: mATX, wifi: "Ні"}, "Найдоступніший вхід на платформу AM5 з пам'яттю DDR5."]
+    - [MB-ASR-B650MPRS, ASRock, "B650M Pro RS", 5299, null, 40, {socket: AM5, chipset: B650, ram_type: DDR5, form_factor: mATX, wifi: "Ні"}, "Компактна плата на AM5 з DDR5 і PCIe 4.0 M.2."]
+    - [MB-GIG-Z790AE, Gigabyte, "Z790 AORUS ELITE AX", 11999, null, 55, {socket: LGA1700, chipset: Z790, ram_type: DDR5, form_factor: ATX, wifi: "Так"}, "Плата для Intel 12-14 покоління з DDR5 і Wi-Fi 6E."]
+    - [MB-MSI-H610ME, MSI, "PRO H610M-E DDR4", 2799, null, 45, {socket: LGA1700, chipset: H610, ram_type: DDR4, form_factor: mATX, wifi: "Ні"}, "Бюджетна плата для Intel 12-14 покоління з DDR4."]
+    - [MB-ASU-Z790E, ASUS, "ROG STRIX Z790-E GAMING WIFI", 17999, 19499, 35, {socket: LGA1700, chipset: Z790, ram_type: DDR5, form_factor: ATX, wifi: "Так"}, "Флагманська плата з потужним живленням, Wi-Fi 6E та PCIe 5.0."]
+  cpu:
+    - [CPU-AMD-R57600X, AMD, "Ryzen 5 7600X", 8499, 9299, 95, {socket: AM5, cores: 6, threads: 12, boost_ghz: 5.3, tdp_w: 105}, "Шестиядерний процесор Zen 4 для ігор і роботи. Кулера в комплекті немає."]
+    - [CPU-AMD-R55600, AMD, "Ryzen 5 5600", 4399, null, 85, {socket: AM4, cores: 6, threads: 12, boost_ghz: 4.4, tdp_w: 65}, "Вигідний шестиядерник для AM4, кулер у комплекті."]
+    - [CPU-AMD-R75700X, AMD, "Ryzen 7 5700X", 6299, null, 70, {socket: AM4, cores: 8, threads: 16, boost_ghz: 4.6, tdp_w: 65}, "Восьмиядерний процесор для AM4. Кулера в комплекті немає."]
+    - [CPU-AMD-R77800X3D, AMD, "Ryzen 7 7800X3D", 16999, null, 80, {socket: AM5, cores: 8, threads: 16, boost_ghz: 5.0, tdp_w: 120}, "Топовий ігровий процесор з технологією 3D V-Cache."]
+    - [CPU-AMD-R97950X, AMD, "Ryzen 9 7950X", 18999, 21999, 40, {socket: AM5, cores: 16, threads: 32, boost_ghz: 5.7, tdp_w: 170}, "16 ядер для рендеру, монтажу та складних задач."]
+    - [CPU-INT-I312100F, Intel, "Core i3-12100F", 3199, null, 60, {socket: LGA1700, cores: 4, threads: 8, boost_ghz: 4.3, tdp_w: 58}, "Чотириядерний процесор для офісного та базового ігрового ПК."]
+    - [CPU-INT-I512400F, Intel, "Core i5-12400F", 4899, null, 85, {socket: LGA1700, cores: 6, threads: 12, boost_ghz: 4.4, tdp_w: 65}, "Доступний шестиядерник для ігрового ПК, без вбудованої графіки."]
+    - [CPU-INT-I513400F, Intel, "Core i5-13400F", 7299, null, 75, {socket: LGA1700, cores: 10, threads: 16, boost_ghz: 4.6, tdp_w: 65}, "10 ядер (6 продуктивних і 4 енергоефективні), без вбудованої графіки."]
+    - [CPU-INT-I714700K, Intel, "Core i7-14700K", 17499, null, 50, {socket: LGA1700, cores: 20, threads: 28, boost_ghz: 5.6, tdp_w: 125}, "20 ядер для ігор і важких задач. Кулера в комплекті немає."]
+  gpu:
+    - [GPU-MSI-4060V2X, MSI, "GeForce RTX 4060 VENTUS 2X BLACK 8G", 15499, null, 100, {vendor: NVIDIA, chip: "GeForce RTX 4060", vram_gb: 8, memory_type: GDDR6}, "Для ігор у Full HD та QHD з підтримкою DLSS 3."]
+    - [GPU-ASU-4060TI, ASUS, "DUAL GeForce RTX 4060 Ti OC Edition 8GB", 19999, null, 70, {vendor: NVIDIA, chip: "GeForce RTX 4060 Ti", vram_gb: 8, memory_type: GDDR6}, "Продуктивна карта для QHD з тихим охолодженням."]
+    - [GPU-GIG-4070S, Gigabyte, "GeForce RTX 4070 SUPER WINDFORCE OC 12G", 31999, 33999, 75, {vendor: NVIDIA, chip: "GeForce RTX 4070 SUPER", vram_gb: 12, memory_type: GDDR6X}, "Потужна карта для QHD та 4K з 12 ГБ швидкої памʼяті."]
+    - [GPU-MSI-4070TIS, MSI, "GeForce RTX 4070 Ti SUPER 16G VENTUS 3X", 42999, null, 45, {vendor: NVIDIA, chip: "GeForce RTX 4070 Ti SUPER", vram_gb: 16, memory_type: GDDR6X}, "Карта для 4K-ігор і роботи з графікою, 16 ГБ памʼяті."]
+    - [GPU-GIG-3060, Gigabyte, "GeForce RTX 3060 GAMING OC 12G", 14499, null, 55, {vendor: NVIDIA, chip: "GeForce RTX 3060", vram_gb: 12, memory_type: GDDR6}, "Перевірена карта для Full HD з великим обсягом памʼяті."]
+    - [GPU-ASU-RX6600, ASUS, "DUAL Radeon RX 6600 8GB", 9299, null, 50, {vendor: AMD, chip: "Radeon RX 6600", vram_gb: 8, memory_type: GDDR6}, "Бюджетна карта для комфортної гри у Full HD."]
+    - [GPU-SAP-RX7600, Sapphire, "PULSE Radeon RX 7600 8GB", 11999, null, 55, {vendor: AMD, chip: "Radeon RX 7600", vram_gb: 8, memory_type: GDDR6}, "Сучасна карта AMD для Full HD з підтримкою FSR 3."]
+    - [GPU-SAP-7800XT, Sapphire, "PULSE Radeon RX 7800 XT 16GB", 27999, 29499, 60, {vendor: AMD, chip: "Radeon RX 7800 XT", vram_gb: 16, memory_type: GDDR6}, "Карта з 16 ГБ памʼяті для ігор у QHD та 4K.", false]
+  ram:
+    - [RAM-KNG-FB32D5, Kingston, "FURY Beast 32GB (2x16GB) DDR5-6000", 5799, null, 80, {ram_type: DDR5, capacity_gb: 32, modules: "2 × 16 ГБ", speed_mhz: 6000}, "Комплект DDR5 з профілем EXPO/XMP для AM5 та LGA1700."]
+    - [RAM-GSK-TZ5-32, G.Skill, "Trident Z5 RGB 32GB (2x16GB) DDR5-6000", 7299, null, 55, {ram_type: DDR5, capacity_gb: 32, modules: "2 × 16 ГБ", speed_mhz: 6000}, "Швидка DDR5 з RGB-підсвіткою для ігрових збірок."]
+    - [RAM-CRS-V32D5, Corsair, "Vengeance 32GB (2x16GB) DDR5-5600", 5499, null, 60, {ram_type: DDR5, capacity_gb: 32, modules: "2 × 16 ГБ", speed_mhz: 5600}, "Надійний комплект DDR5 за помірну ціну."]
+    - [RAM-CRS-V64D5, Corsair, "Vengeance 64GB (2x32GB) DDR5-6000", 11999, null, 30, {ram_type: DDR5, capacity_gb: 64, modules: "2 × 32 ГБ", speed_mhz: 6000}, "Великий комплект для монтажу, віртуалізації та важких задач."]
+    - [RAM-CRS-V16D4, Corsair, "Vengeance LPX 16GB (2x8GB) DDR4-3200", 1899, null, 75, {ram_type: DDR4, capacity_gb: 16, modules: "2 × 8 ГБ", speed_mhz: 3200}, "Перевірена DDR4 з низькопрофільним радіатором."]
+    - [RAM-KNG-FB16D4, Kingston, "FURY Beast 16GB (2x8GB) DDR4-3200", 1799, null, 70, {ram_type: DDR4, capacity_gb: 16, modules: "2 × 8 ГБ", speed_mhz: 3200}, "Комплект DDR4 для оновлення ігрового ПК."]
+    - [RAM-PAT-VS16D4, Patriot, "Viper Steel 16GB (2x8GB) DDR4-3600", 1999, null, 45, {ram_type: DDR4, capacity_gb: 16, modules: "2 × 8 ГБ", speed_mhz: 3600}, "Швидка DDR4 з металевим радіатором."]
+    - [RAM-GDR-IRDM8, Goodram, "IRDM 8GB DDR4-3200", 899, null, 40, {ram_type: DDR4, capacity_gb: 8, modules: "1 × 8 ГБ", speed_mhz: 3200}, "Одна планка DDR4 для бюджетного ПК або доукомплектації."]
+  ssd:
+    - [SSD-SAM-980P1T, Samsung, "980 PRO 1TB NVMe", 5199, 5699, 88, {capacity_gb: 1000, interface: "NVMe PCIe 4.0", form_factor: "M.2 2280", read_mbps: 7000}, "Швидкий NVMe-накопичувач для системи та ігор."]
+    - [SSD-KNG-NV2-500, Kingston, "NV2 500GB NVMe", 1599, null, 65, {capacity_gb: 500, interface: "NVMe PCIe 4.0", form_factor: "M.2 2280", read_mbps: 3500}, "Бюджетний NVMe-накопичувач для системи та програм."]
+    - [SSD-WD-SN580-1T, Western Digital, "Blue SN580 1TB NVMe", 3299, null, 70, {capacity_gb: 1000, interface: "NVMe PCIe 4.0", form_factor: "M.2 2280", read_mbps: 4150}, "Збалансований NVMe для щоденних задач."]
+    - [SSD-KNG-KC3000-2T, Kingston, "KC3000 2TB NVMe", 8499, null, 45, {capacity_gb: 2000, interface: "NVMe PCIe 4.0", form_factor: "M.2 2280", read_mbps: 7000}, "Місткий і швидкий накопичувач для ігор та робочих проєктів."]
+    - [SSD-CRU-MX500-1T, Crucial, "MX500 1TB SATA", 3399, null, 50, {capacity_gb: 1000, interface: "SATA III", form_factor: "2.5 дюйма", read_mbps: 560}, "Надійний SATA SSD для оновлення старого ПК чи ноутбука."]
+    - [SSD-SAM-870E-500, Samsung, "870 EVO 500GB SATA", 2699, null, 55, {capacity_gb: 500, interface: "SATA III", form_factor: "2.5 дюйма", read_mbps: 560}, "Довговічний SATA SSD від Samsung."]
+  hdd:
+    - [HDD-SEA-BC2T, Seagate, "BarraCuda 2TB 7200 об/хв", 2399, null, 50, {capacity_gb: 2000, rpm: 7200, cache_mb: 256, form_factor: "3.5 дюйма"}, "Жорсткий диск для зберігання файлів і медіатеки."]
+    - [HDD-WD-BLUE1T, Western Digital, "Blue 1TB 7200 об/хв", 1699, null, 40, {capacity_gb: 1000, rpm: 7200, cache_mb: 64, form_factor: "3.5 дюйма"}, "Класичний жорсткий диск для настільного ПК."]
+    - [HDD-SEA-BC4T, Seagate, "BarraCuda 4TB 5400 об/хв", 3799, null, 35, {capacity_gb: 4000, rpm: 5400, cache_mb: 256, form_factor: "3.5 дюйма"}, "Місткий і тихий диск для архівів."]
+  psu:
+    - [PSU-SEA-FOCUS750, Seasonic, "FOCUS GX-750", 4799, null, 50, {wattage: 750, efficiency: "80+ Gold", modularity: "Повністю модульний"}, "Тихий і надійний блок живлення для потужних збірок."]
+    - [PSU-COR-RM850E, Corsair, "RM850e (2023)", 5999, null, 60, {wattage: 850, efficiency: "80+ Gold", modularity: "Повністю модульний"}, "Блок живлення з запасом потужності під сучасні відеокарти."]
+    - [PSU-BQ-PP12M650, be quiet!, "Pure Power 12 M 650W", 3999, null, 45, {wattage: 650, efficiency: "80+ Gold", modularity: "Повністю модульний"}, "Тихий модульний блок живлення середнього рівня."]
+    - [PSU-CM-MWE600, Cooler Master, "MWE 600 Bronze V2", 2199, null, 55, {wattage: 600, efficiency: "80+ Bronze", modularity: "Немодульний"}, "Бюджетний блок живлення для офісного та ігрового ПК."]
+    - [PSU-MSI-A650BN, MSI, "MAG A650BN", 2299, null, 50, {wattage: 650, efficiency: "80+ Bronze", modularity: "Немодульний"}, "Доступний блок живлення для збірки середнього рівня."]
+  cases:
+    - [CASE-LIA-LAN216, Lian Li, "LANCOOL 216", 4999, null, 45, {form_factor: ATX, color: "Чорний", side_panel: "Скло"}, "Корпус з відмінним потоком повітря та місцем під великі відеокарти."]
+    - [CASE-DEE-CC560, DeepCool, "CC560", 2299, null, 55, {form_factor: ATX, color: "Чорний", side_panel: "Скло"}, "Доступний корпус із загартованим склом і сітчастою передньою панеллю."]
+    - [CASE-DEE-MX40, DeepCool, "MATREXX 40", 1599, null, 35, {form_factor: mATX, color: "Чорний", side_panel: "Скло"}, "Компактний корпус для плат формату mATX."]
+    - [CASE-NZX-H5F, NZXT, "H5 Flow", 3999, null, 50, {form_factor: ATX, color: "Чорний", side_panel: "Скло"}, "Охайний корпус з продуманим охолодженням."]
+    - [CASE-NZX-H5FW, NZXT, "H5 Flow White", 4199, null, 40, {form_factor: ATX, color: "Білий", side_panel: "Скло"}, "Білий варіант H5 Flow для світлих збірок."]
+    - [CASE-COR-4000D, Corsair, "4000D Airflow", 4299, null, 55, {form_factor: ATX, color: "Чорний", side_panel: "Скло"}, "Популярний корпус із зручним керуванням кабелями."]
+    - [CASE-COR-4000DW, Corsair, "4000D Airflow White", 4499, null, 30, {form_factor: ATX, color: "Білий", side_panel: "Скло"}, "Білий варіант 4000D Airflow.", false]
+    - [CASE-MON-AIR903, Montech, "AIR 903 MAX", 2499, null, 50, {form_factor: ATX, color: "Чорний", side_panel: "Скло"}, "Бюджетний корпус з трьома вентиляторами в комплекті."]
+  coolers:
+    - [COOL-DEE-AK620, DeepCool, "AK620", 2799, null, 52, {type: "Повітряний", tdp_w: 260}, "Двобаштовий кулер, розсіює до 260 Вт."]
+    - [COOL-DEE-AK400, DeepCool, "AK400", 1099, null, 70, {type: "Повітряний", tdp_w: 220}, "Компактний і ефективний кулер для більшості процесорів."]
+    - [COOL-BQ-PR2, be quiet!, "Pure Rock 2", 1599, null, 45, {type: "Повітряний", tdp_w: 150}, "Тихий вежовий кулер для процесорів середнього рівня."]
+    - [COOL-TRM-PA120SE, Thermalright, "Peerless Assassin 120 SE", 1499, null, 60, {type: "Повітряний", tdp_w: 260}, "Двобаштовий кулер з відмінним співвідношенням ціни та охолодження."]
+    - [COOL-ARC-LF3-240, Arctic, "Liquid Freezer III 240", 3999, null, 40, {type: "Рідинне", radiator_mm: 240}, "Система рідинного охолодження з радіатором 240 мм."]
+    - [COOL-ARC-LF3-360, Arctic, "Liquid Freezer III 360", 5499, 5999, 35, {type: "Рідинне", radiator_mm: 360}, "Система рідинного охолодження з радіатором 360 мм для гарячих процесорів."]
+  fans:
+    - [FAN-ARC-P12, Arctic, "P12 PWM", 249, null, 70, {size_mm: 120, quantity: 1, connector: "4-pin PWM"}, "Тихий вентилятор 120 мм для корпусу."]
+    - [FAN-ARC-P14, Arctic, "P14 PWM", 299, null, 50, {size_mm: 140, quantity: 1, connector: "4-pin PWM"}, "Вентилятор 140 мм з великим потоком повітря."]
+    - [FAN-DEE-FC120, DeepCool, "FC120 (комплект 3 шт.)", 799, null, 50, {size_mm: 120, quantity: 3, connector: "4-pin PWM"}, "Три вентилятори 120 мм з підсвіткою."]
+    - [FAN-NOC-A12X25, Noctua, "NF-A12x25 PWM", 1499, null, 40, {size_mm: 120, quantity: 1, connector: "4-pin PWM"}, "Преміальний тихий вентилятор 120 мм."]

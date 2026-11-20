@@ -1,0 +1,137 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "knn": true,
+      "knn.algo_param.ef_search": 100
+    },
+    "analysis": {
+      "char_filter": {
+        "uk_normalize": {
+          "type": "mapping",
+          "mappings": [
+            "’=>'", "ʼ=>'", "`=>'", "´=>'", "′=>'",
+            "‐=>-", "–=>-", "—=>-",
+            "ё=>е", "ы=>и", "э=>е", "ґ=>г"
+          ]
+        }
+      },
+      "filter": {
+        "uk_stop": {
+          "type": "stop",
+          "stopwords_path": "analysis/stopwords_uk.txt",
+          "ignore_case": true
+        },
+        "uk_synonyms": {
+          "type": "synonym_graph",
+          "synonyms_path": "analysis/synonyms_uk.txt",
+          "updateable": true,
+          "lenient": true
+        },
+        "model_code_wdf": {
+          "type": "word_delimiter_graph",
+          "generate_word_parts": true,
+          "generate_number_parts": true,
+          "split_on_numerics": true,
+          "catenate_all": true,
+          "preserve_original": true
+        },
+        "edge_2_15": { "type": "edge_ngram", "min_gram": 2, "max_gram": 15 }
+      },
+      "analyzer": {
+        "uk_index": {
+          "type": "custom",
+          "char_filter": ["uk_normalize"],
+          "tokenizer": "standard",
+          "filter": ["lowercase", "uk_stop"]
+        },
+        "uk_search": {
+          "type": "custom",
+          "char_filter": ["uk_normalize"],
+          "tokenizer": "standard",
+          "filter": ["lowercase", "uk_synonyms", "uk_stop"]
+        },
+        "model_code": {
+          "type": "custom",
+          "char_filter": ["uk_normalize"],
+          "tokenizer": "whitespace",
+          "filter": ["lowercase", "model_code_wdf"]
+        },
+        "autocomplete_index": {
+          "type": "custom",
+          "char_filter": ["uk_normalize"],
+          "tokenizer": "standard",
+          "filter": ["lowercase", "edge_2_15"]
+        },
+        "autocomplete_search": {
+          "type": "custom",
+          "char_filter": ["uk_normalize"],
+          "tokenizer": "standard",
+          "filter": ["lowercase"]
+        }
+      },
+      "normalizer": {
+        "lowercase_norm": { "type": "custom", "filter": ["lowercase"] }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "dynamic_templates": [
+      { "specs_strings": { "path_match": "specs.*", "match_mapping_type": "string", "mapping": { "type": "keyword" } } },
+      { "specs_numbers": { "path_match": "specs.*", "match_mapping_type": "long", "mapping": { "type": "double" } } }
+    ],
+    "properties": {
+      "id": { "type": "long" },
+      "sku": {
+        "type": "keyword",
+        "normalizer": "lowercase_norm",
+        "fields": { "code": { "type": "text", "analyzer": "model_code" } }
+      },
+      "name": {
+        "type": "text",
+        "analyzer": "uk_index",
+        "search_analyzer": "uk_search",
+        "fields": {
+          "morph": { "type": "text", "analyzer": "ukrainian" },
+          "code": { "type": "text", "analyzer": "model_code" },
+          "suggest": { "type": "text", "analyzer": "autocomplete_index", "search_analyzer": "autocomplete_search" }
+        }
+      },
+      "description": {
+        "type": "text",
+        "analyzer": "uk_index",
+        "search_analyzer": "uk_search",
+        "fields": { "morph": { "type": "text", "analyzer": "ukrainian" } }
+      },
+      "brand": { "type": "keyword", "fields": { "text": { "type": "text", "analyzer": "model_code" } } },
+      "category": { "type": "keyword" },
+      "category_path": { "type": "keyword" },
+      "category_name": {
+        "type": "text",
+        "analyzer": "uk_index",
+        "search_analyzer": "uk_search",
+        "fields": { "morph": { "type": "text", "analyzer": "ukrainian" } }
+      },
+      "price": { "type": "scaled_float", "scaling_factor": 100 },
+      "old_price": { "type": "scaled_float", "scaling_factor": 100 },
+      "in_stock": { "type": "boolean" },
+      "popularity": { "type": "integer" },
+      "specs": { "type": "object", "dynamic": true },
+      "specs_text": { "type": "text", "analyzer": "model_code" },
+      "image_url": { "type": "keyword", "index": false },
+      "updated_at": { "type": "date" },
+      "embedding": {
+        "type": "knn_vector",
+        "dimension": 384,
+        "method": {
+          "name": "hnsw",
+          "space_type": "cosinesimil",
+          "engine": "lucene",
+          "parameters": { "ef_construction": 128, "m": 16 }
+        }
+      }
+    }
+  }
+}

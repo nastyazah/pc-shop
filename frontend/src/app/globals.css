@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Палітра Fiery Ocean. Основа темна, світлі елементи (кремові) - акценти:
+   панелі під фото, пошуковий рядок, смуга-пояснення. Червоний - дія. */
+@theme {
+  --color-ink: #050e16;     /* #003049, затемнений для фону */
+  --color-navy: #003049;
+  --color-blood: #780000;
+  --color-red: #c1121f;
+  --color-cream: #fdf0d5;
+  --color-steel: #669bbc;
+  --color-paper: #fff9ec;   /* світліший відтінок кремового для піднятих поверхонь */
+}
+@theme inline {
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+}
+
+html { color-scheme: dark; }
+body {
+  color: var(--color-cream);
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(900px 600px at 92% 0, color-mix(in oklab, var(--color-red) 14%, transparent), transparent 70%),
+    radial-gradient(800px 700px at 0 420px, color-mix(in oklab, var(--color-navy) 55%, transparent), transparent 70%);
+  background-repeat: no-repeat;
+}
+::selection { background: var(--color-red); color: var(--color-cream); }
+
+.btn-red {
+  background: linear-gradient(180deg, var(--color-red), var(--color-blood));
+  color: var(--color-cream);
+  box-shadow: 0 8px 24px -10px color-mix(in oklab, var(--color-red) 80%, transparent);
+  transition: filter 0.15s;
+}
+.btn-red:hover { filter: brightness(1.12); }
+
+:focus-visible { outline: 2px solid var(--color-steel); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

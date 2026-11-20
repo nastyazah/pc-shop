@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-shop}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-shop}
+      POSTGRES_DB: ${POSTGRES_DB:-shop}
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro   # виконується лише при першому створенні тому
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-shop}"]
+      interval: 5s
+      retries: 10
+
+  opensearch:
+    build:
+      context: ./infra/opensearch
+      args:
+        OPENSEARCH_VERSION: ${OPENSEARCH_VERSION:-3.6.0}
+    environment:
+      - discovery.type=single-node
+      - DISABLE_SECURITY_PLUGIN=true          # лише для локальної розробки
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
+    ports: ["9200:9200"]
+    volumes:
+      - osdata:/usr/share/opensearch/data
+      # стоп-слова та синоніми, на які посилається аналізатор (шлях відносно config/)
+      - ./infra/opensearch/analysis:/usr/share/opensearch/config/analysis:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      retries: 20
+
+  dashboards:            # необов'язково: docker compose --profile tools up -d
+    image: opensearchproject/opensearch-dashboards:${OPENSEARCH_VERSION:-3.6.0}
+    profiles: ["tools"]
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+    ports: ["5601:5601"]
+    depends_on: [opensearch]
+
+volumes:
+  pgdata:
+  osdata:
